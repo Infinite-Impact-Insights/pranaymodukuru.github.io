@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Soft Sensor | Pranay Modukuru</title>
+    <link>https://pranaymodukuru.github.io/tags/soft-sensor/</link>
+      <atom:link href="https://pranaymodukuru.github.io/tags/soft-sensor/index.xml" rel="self" type="application/rss+xml" />
+    <description>Soft Sensor</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Soft Sensor</title>
+      <link>https://pranaymodukuru.github.io/tags/soft-sensor/</link>
+    </image>
+    
+    <item>
+      <title>PMSM Rotor Temperature Prediction</title>
+      <link>https://pranaymodukuru.github.io/project/pmsm-rotor-temperature/</link>
+      <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>https://pranaymodukuru.github.io/project/pmsm-rotor-temperature/</guid>
+      <description>&lt;p&gt;Measuring Rotor temperature of any motor is difficult. As the rotor is continuously rotating and attaching any sensor to it would be difficult. Also, knowing the rotor&amp;rsquo;s temperature would enable efficient control of the motor.&lt;/p&gt;
+&lt;p&gt;For this reason, predicting the rotors temperature using machine learning would benefit in designing of the motor with minimal equipment and helps in efficient control of the motor.&lt;/p&gt;
+&lt;p&gt;Check out the project on 
+&lt;a href=&#34;https://github.com/pranaymodukuru/PMSM_Rotor_Temp_Prediction/blob/master/CNN_MotorTemperature_Regression.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
