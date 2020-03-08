@@ -13,13 +13,643 @@
     </image>
     
     <item>
-      <title>Effect of Initialization on Optimization Trajectory</title>
+      <title>Concrete Compressive Strength Prediction using Machine Learning</title>
+      <link>https://pranaymodukuru.github.io/post/concrete-compressive-strength/</link>
+      <pubDate>Thu, 05 Mar 2020 01:53:52 +0100</pubDate>
+      <guid>https://pranaymodukuru.github.io/post/concrete-compressive-strength/</guid>
+      <description>&lt;h2 id=&#34;concrete-compressive-strength&#34;&gt;Concrete Compressive Strength&lt;/h2&gt;
+&lt;p&gt;The Compressive Strength of Concrete determines the quality of Concrete. This is generally determined by a standard crushing test on a concrete cylinder. This requires engineers to build small concrete cylinders with different combinations of raw materials and test these cylinders for strength variations with a change in each raw material. The recommended wait time for testing the cylinder is 28 days to ensure correct results. This consumes a lot of time and requires lot of labour to prepare different prototypes and test them. Also, this method is prone to human error and one small mistake can cause the wait time to drastically increase.&lt;/p&gt;
+&lt;p&gt;One way of reducing the wait time and reducing the amount of combinations to try is to make use of digital simulations, where we can provide information to the computer about what we know and the computer tries different combinations to predict the compressive strength. This way we can reduce the amount of combinations we can try physically and reduce the amount of time for experimentation. But, to design such software we have to know the relations between all the raw materials and how one material affects the strength. It is possible to derive mathematical equations and run simulations based on these equations, but we cannot expect the relations to be same in real-world. Also, these tests have been performed for many number of time now and we have enough real-world data that can be used for predictive modelling.&lt;/p&gt;
+&lt;p&gt;In this article, we are going to analyse 
+&lt;a href=&#34;https://archive.ics.uci.edu/ml/datasets/Concrete&amp;#43;Compressive&amp;#43;Strength&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Concrete Compressive Strength&lt;/a&gt; dataset and build Machine Learning models to predict the compressive strength. This 
+&lt;a href=&#34;https://github.com/pranaymodukuru/Concrete-compressive-strength/blob/master/ConcreteCompressiveStrengthPrediction.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;notebook&lt;/a&gt; containing all the code can be used in parallel.&lt;/p&gt;
+&lt;h3 id=&#34;dataset-description&#34;&gt;Dataset Description&lt;/h3&gt;
+&lt;p&gt;The dataset consists of 1030 instances with 9 attributes and has no missing values. There are 8 input variables and 1 output variable. Seven input variables represents the amount of a raw material (measured in $kg/m^3$) and one represents Age (in Days). The target variable is Concrete Compressive Strength measured in ($MPa$ - Mega Pascal). We shall explore the data to see how input features are affecting compressive strength.&lt;/p&gt;
+&lt;h3 id=&#34;exploratory-data-analysis&#34;&gt;Exploratory Data Analysis&lt;/h3&gt;
+&lt;p&gt;The first step in a Data Science project is to understand the data and gain insights from the data before doing any modelling. This includes checking for any missing values, plotting the features with respect to the target variable, observing the distributions of all the features and so on. Lets import the data and
+start analysing.&lt;/p&gt;
+&lt;p&gt;Lets check the correlations between the input features, this will give an idea about how each variable is affecting all other variables. This can be done by calculating Pearson correlations between the features as shown in the code below.&lt;/p&gt;
+&lt;!-- **Note** - Complete code used for generating plots (titles, axes labels, etc.) is not shown here for simplicity. The complete code can be viewed [here](https://github.com/pranaymodukuru/Concrete-compressive-strength/blob/master/ConcreteCompressiveStrengthPrediction.ipynb). --&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;corr = data.corr()
+sns.heatmap(corr, annot=True, cmap=&#39;Blues&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/pearson_coeff.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/pearson_coeff.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;We can observe a high positive correlation between &lt;strong&gt;compressive Strength&lt;/strong&gt; (CC_Strength) and &lt;strong&gt;Cement&lt;/strong&gt;. this is true because strength concrete indeed increases with an increase in amount of cement used in preparing it. Also, &lt;strong&gt;Age&lt;/strong&gt; and &lt;strong&gt;Super Plasticizer&lt;/strong&gt; are other two factors influencing Compressive strength.&lt;/p&gt;
+&lt;p&gt;There are other strong correlations between the fetures,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A strong negative correlation between &lt;strong&gt;Super Plasticizer&lt;/strong&gt; and &lt;strong&gt;Water&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;positive correlations between &lt;strong&gt;Super Plasticizer&lt;/strong&gt; and &lt;strong&gt;Fly Ash&lt;/strong&gt;, &lt;strong&gt;Fine Aggregate&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These correlations are useful to understand the data in detail, as they give an idea about how a variable is affecting the other. We can further use a &lt;strong&gt;pairplot&lt;/strong&gt; in seaborn to plot pair wise relations between all the features and distributions of features along the diagonal.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;sns.pairplot(data)
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/pairplot.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/pairplot.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;The pair plot gives a visual representation of correlations between all the features.&lt;/p&gt;
+&lt;p&gt;We can plot scatter plots between &lt;strong&gt;CC_Strength&lt;/strong&gt; and other features to see more complex relations.&lt;/p&gt;
+&lt;h5 id=&#34;cc_strength-vs-cement-age-water&#34;&gt;CC_Strength vs (Cement, Age, Water)&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;sns.scatterplot(y=&amp;quot;CC_Strength&amp;quot;, x=&amp;quot;Cement&amp;quot;, hue=&amp;quot;Water&amp;quot;,
+                  size=&amp;quot;Age&amp;quot;, data=data, ax=ax, sizes=(50, 300))
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/scatter_1.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/scatter_1.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;The observations we can make from this plot,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Compressive strength increases as amount of cement increases&lt;/strong&gt;, as the dots move up when we move towards right on the x-axis.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Compressive strength increases with age&lt;/strong&gt; (as the size of dots represents the age), this not the case always but can be up to an extent.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cement with less age requires more cement for higher strength&lt;/strong&gt;, as the smaller dots are moving up when we move towards right on x-axis.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The older the cement is the more water it requires&lt;/strong&gt;, can be confirmed by observing the colour of the dots. Larger dots with dark colour indicate high age and more water.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Concrete strength increases when less water is used&lt;/strong&gt; in preparing it, since the dots on the lower side (y-axis) are darker and the dots on higher end (y-axis) are brighter.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;cc-strength-vs-fine-aggregate-super-plasticizer-fly-ash&#34;&gt;CC Strength vs (Fine aggregate, Super Plasticizer, Fly Ash)&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;sns.scatterplot(y=&amp;quot;CC_Strength&amp;quot;, x=&amp;quot;FineAggregate&amp;quot;, hue=&amp;quot;FlyAsh&amp;quot;, size=&amp;quot;Superplasticizer&amp;quot;,
+                data=data, ax=ax, sizes=(50, 300))
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/scatter_2.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/scatter_2.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Observations,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Compressive strength decreases Fly ash increases&lt;/strong&gt;, as more darker dots are concentrated in the region representing low compressive strength.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Compressive strength increases with Super plasticizer&lt;/strong&gt;, since larger the dot the higher they are in the plot.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We can visually understand 2D, 3D and max up to 4D plots (features represented by colour and size) as shown above, we can further use row wise and column wise plotting features by seaborn to do further analysis, but still we lack the ability to track all these correlations by ourselves. For this reason, we can turn to Machine Learning to capture these relations and give better insights into the problem.&lt;/p&gt;
+&lt;h3 id=&#34;data-preprocessing&#34;&gt;Data preprocessing&lt;/h3&gt;
+&lt;p&gt;Before we fit machine learning models on the data, we need to split the data into train, test splits. The features can be rescaled to have a mean of zero and a standard deviation of 1 i.e. all the features fall into the same range.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;X = data.iloc[:,:-1]         # Features
+y = data.iloc[:,-1]          # Target
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=2)
+
+sc = StandardScaler()
+
+X_train = sc.fit_transform(X_train)
+X_test = sc.transform(X_test)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;model-building&#34;&gt;Model Building&lt;/h3&gt;
+&lt;p&gt;After preparing the data, we can fit different models on the training data and compare their performance to choose the algorithm with good performance. As this is a regression problem, we can use RMSE (Root Mean Square Error) and $R^2$ score as evaluation metrics.&lt;/p&gt;
+&lt;h4 id=&#34;1-linear-regression&#34;&gt;1. Linear Regression&lt;/h4&gt;
+&lt;p&gt;We will start with Linear Regression, since this is the go-to algorithm for any regression problem. The algorithm tries to form a linear relationship between the input features and the target variable i.e. it fits a straight line given by, $$y = W*X + b = \sum_{i=1}^{n} w_i * x_i + b$$ Where $w_i$ corresponds to the coefficient of feature $x_i$.&lt;/p&gt;
+&lt;p&gt;The magnitude of these coefficients can be further controlled by using regularization terms to the cost functions. Adding the sum of the magnitudes of the coefficients will result in the coefficients being close to zero, this variation of linear regression is called &lt;strong&gt;Lasso&lt;/strong&gt; Regression. Adding the sum of squares of the coefficients to the cost function will make the coefficients be in the same range and this variation is called &lt;strong&gt;Ridge&lt;/strong&gt; Regression. Both these variations help in reducing the model complexity and therefore reducing the chances of overfitting on the data.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Importing models
+from sklearn.linear_model import LinearRegression, Lasso, Ridge
+
+# Linear Regression
+lr = LinearRegression()
+# Lasso Regression
+lasso = Lasso()
+# Ridge Regression
+ridge = Ridge()
+
+# Fitting models on Training data
+lr.fit(X_train, y_train)
+lasso.fit(X_train, y_train)
+ridge.fit(X_train, y_train)
+
+# Making predictions on Test data
+y_pred_lr = lr.predict(X_test)
+y_pred_lasso = lasso.predict(X_test)
+y_pred_ridge = ridge.predict(X_test)
+
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+
+print(&amp;quot;Model\t\t\t RMSE \t\t R2&amp;quot;)
+print(&amp;quot;&amp;quot;&amp;quot;LinearRegression \t {:.2f} \t\t{:.2f}&amp;quot;&amp;quot;&amp;quot;.format(
+            np.sqrt(mean_squared_error(y_test, y_pred_lr)), r2_score(y_test, y_pred_lr)))
+print(&amp;quot;&amp;quot;&amp;quot;LassoRegression \t {:.2f} \t\t{:.2f}&amp;quot;&amp;quot;&amp;quot;.format(
+            np.sqrt(mean_squared_error(y_test, y_pred_lasso)), r2_score(y_test, y_pred_lasso)))
+print(&amp;quot;&amp;quot;&amp;quot;RidgeRegression \t {:.2f} \t\t{:.2f}&amp;quot;&amp;quot;&amp;quot;.format(
+            np.sqrt(mean_squared_error(y_test, y_pred_ridge)), r2_score(y_test, y_pred_ridge)))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h6 id=&#34;output&#34;&gt;Output&lt;/h6&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Model&lt;/th&gt;
+&lt;th&gt;RMSE&lt;/th&gt;
+&lt;th&gt;R2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;LinearRegression&lt;/td&gt;
+&lt;td&gt;10.29&lt;/td&gt;
+&lt;td&gt;0.57&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LassoRegression&lt;/td&gt;
+&lt;td&gt;10.68&lt;/td&gt;
+&lt;td&gt;0.54&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RidgeRegression&lt;/td&gt;
+&lt;td&gt;10.29&lt;/td&gt;
+&lt;td&gt;0.57&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;There is not much difference between the performance with these three algorithms, we can plot the coefficients assigned by the three algorithms for the features with the following code.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;coeff_lr = lr.coef_
+coeff_lasso = lasso.coef_
+coeff_ridge = ridge.coef_
+
+labels = req_col_names[:-1]
+
+x = np.arange(len(labels))
+width = 0.3
+
+fig, ax = plt.subplots(figsize=(10,6))
+rects1 = ax.bar(x - 2*(width/2), coeff_lr, width, label=&#39;LR&#39;)
+rects2 = ax.bar(x, coeff_lasso, width, label=&#39;Lasso&#39;)
+rects3 = ax.bar(x + 2*(width/2), coeff_ridge, width, label=&#39;Ridge&#39;)
+
+ax.set_ylabel(&#39;Coefficient&#39;)
+ax.set_xlabel(&#39;Features&#39;)
+ax.set_title(&#39;Feature Coefficients&#39;)
+ax.set_xticks(x)
+ax.set_xticklabels(labels, rotation=45)
+ax.legend()
+
+def autolabel(rects):
+    &amp;quot;&amp;quot;&amp;quot;Attach a text label above each bar in *rects*, displaying its height.&amp;quot;&amp;quot;&amp;quot;
+    for rect in rects:
+        height = rect.get_height()
+        ax.annotate(&#39;{:.2f}&#39;.format(height), xy=(rect.get_x() + rect.get_width() / 2, height),
+                    xytext=(0, 3), textcoords=&amp;quot;offset points&amp;quot;, ha=&#39;center&#39;, va=&#39;bottom&#39;)
+autolabel(rects1)
+autolabel(rects2)
+autolabel(rects3)
+
+fig.tight_layout()
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/lr_coeffs.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/lr_coeffs.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;As seen in the figure, Lasso regression pushes the coefficients towards zero and the coefficients with the normal Linear Regression and Ridge Regression are almost the same.&lt;/p&gt;
+&lt;p&gt;We can further see how the predictions are by plotting the true values and predicted values,&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fig, (ax1, ax2, ax3) = plt.subplots(1,3, figsize=(12,4))
+
+ax1.scatter(y_pred_lr, y_test, s=20)
+ax1.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], &#39;k--&#39;, lw=2)
+ax1.set_ylabel(&amp;quot;True&amp;quot;)
+ax1.set_xlabel(&amp;quot;Predicted&amp;quot;)
+ax1.set_title(&amp;quot;Linear Regression&amp;quot;)
+
+ax2.scatter(y_pred_lasso, y_test, s=20)
+ax2.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], &#39;k--&#39;, lw=2)
+ax2.set_ylabel(&amp;quot;True&amp;quot;)
+ax2.set_xlabel(&amp;quot;Predicted&amp;quot;)
+ax2.set_title(&amp;quot;Lasso Regression&amp;quot;)
+
+ax3.scatter(y_pred_ridge, y_test, s=20)
+ax3.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], &#39;k--&#39;, lw=2)
+ax3.set_ylabel(&amp;quot;True&amp;quot;)
+ax3.set_xlabel(&amp;quot;Predicted&amp;quot;)
+ax3.set_title(&amp;quot;Ridge Regression&amp;quot;)
+
+fig.suptitle(&amp;quot;True vs Predicted&amp;quot;)
+fig.tight_layout(rect=[0, 0.03, 1, 0.95])
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/lr_true_pred.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/lr_true_pred.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;If the predicted values and the target values are equal, then the points on the scatter plot will lie on the straight line. As we can see here, non of the model predicts the Compressive Strength correctly.&lt;/p&gt;
+&lt;h4 id=&#34;2-decision-trees&#34;&gt;2. Decision Trees&lt;/h4&gt;
+&lt;p&gt;A Decision Tree Algorithm represents the data with a tree like structure, where each node represents a decision taken on a feature. This algorithm would give better performance in this case, since we have a lot of zeros in some of the input features as seen from their distributions in the pair plot above. This would help the decision trees build trees based on some conditions on features which can further improve performance.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn.tree import DecisionTreeRegressor
+
+dtr = DecisionTreeRegressor()
+
+dtr.fit(X_train, y_train)
+
+y_pred_dtr = dtr.predict(X_test)
+
+print(&amp;quot;Model\t\t\t\t RMSE  \t\t R2&amp;quot;)
+print(&amp;quot;&amp;quot;&amp;quot;Decision Tree Regressor \t {:.2f} \t\t{:.2f}&amp;quot;&amp;quot;&amp;quot;.format(
+            np.sqrt(mean_squared_error(y_test, y_pred_dtr)), r2_score(y_test, y_pred_dtr)))
+
+plt.scatter(y_test, y_pred_dtr)
+plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], &#39;k--&#39;, lw=2)
+plt.xlabel(&amp;quot;Predicted&amp;quot;)
+plt.ylabel(&amp;quot;True&amp;quot;)
+plt.title(&amp;quot;Decision Tree Regressor&amp;quot;)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Model&lt;/th&gt;
+&lt;th&gt;RMSE&lt;/th&gt;
+&lt;th&gt;R2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Decision Tree Regressor&lt;/td&gt;
+&lt;td&gt;7.31&lt;/td&gt;
+&lt;td&gt;0.78&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/dtr_true_pred.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/dtr_true_pred.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;The Root Mean Squared Error (RMSE) has come down from 10.29 to 7.31, so the Decision Tree Regressor has improved the performance by a significant amount. This can be observed in the plot as well as more points are closer to the line.&lt;/p&gt;
+&lt;h4 id=&#34;3-random-forests&#34;&gt;3. Random Forests&lt;/h4&gt;
+&lt;p&gt;Since Using a Decision Tree Regressor has improved our performance, we can further improve the performance by ensembling more trees. Random Forest Regressor trains randomly initialized trees with random subsets of data sampled from the training data, this will make our model more robust.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn.ensemble import RandomForestRegressor
+
+rfr = RandomForestRegressor(n_estimators=100)
+
+rfr.fit(X_train, y_train)
+
+y_pred_rfr = rfr.predict(X_test)
+
+print(&amp;quot;Model\t\t\t\t RMSE  \t\t R2&amp;quot;)
+print(&amp;quot;&amp;quot;&amp;quot;Random Forest Regressor \t {:.2f} \t\t{:.2f}&amp;quot;&amp;quot;&amp;quot;.format(
+            np.sqrt(mean_squared_error(y_test, y_pred_rfr)), r2_score(y_test, y_pred_rfr)))
+
+plt.scatter(y_test, y_pred_rfr)
+plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], &#39;k--&#39;, lw=2)
+plt.xlabel(&amp;quot;Predicted&amp;quot;)
+plt.ylabel(&amp;quot;True&amp;quot;)
+plt.title(&amp;quot;Random Forest Regressor&amp;quot;)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Model&lt;/th&gt;
+&lt;th&gt;RMSE&lt;/th&gt;
+&lt;th&gt;R2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Random Forest Regressor&lt;/td&gt;
+&lt;td&gt;5.08&lt;/td&gt;
+&lt;td&gt;0.89&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/rfr_true_pred.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/rfr_true_pred.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;The RMSE has further reduced by ensembling multiple trees. We can plot the feature importance&amp;rsquo;s for tree based models. The feature importance&amp;rsquo;s show how important a feature is for a model when making a prediction.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+feature_dtr = dtr.feature_importances_
+feature_rfr = rfr.feature_importances_
+
+labels = req_col_names[:-1]
+
+x = np.arange(len(labels))
+width = 0.3
+
+fig, ax = plt.subplots(figsize=(10,6))
+rects1 = ax.bar(x-(width/2), feature_dtr, width, label=&#39;Decision Tree&#39;)
+rects2 = ax.bar(x+(width/2), feature_rfr, width, label=&#39;Random Forest&#39;)
+
+ax.set_ylabel(&#39;Importance&#39;)
+ax.set_xlabel(&#39;Features&#39;)
+ax.set_title(&#39;Feature Importance&#39;)
+ax.set_xticks(x)
+ax.set_xticklabels(labels, rotation=45)
+ax.legend(loc=&amp;quot;upper left&amp;quot;, bbox_to_anchor=(1,1))
+
+autolabel(rects1)
+autolabel(rects2)
+
+fig.tight_layout()
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/tree_feat_imps.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/tree_feat_imps.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Cement and Age are treated as the most important features by tree based models. Fly ash, Coarse and Fine aggregates are least important factors when predicting the strength of Concrete.&lt;/p&gt;
+&lt;h4 id=&#34;comparison&#34;&gt;Comparison&lt;/h4&gt;
+&lt;p&gt;Finally, lets compare the results of all the algorithms.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+models = [lr, lasso, ridge, dtr, rfr]
+names = [&amp;quot;Linear Regression&amp;quot;, &amp;quot;Lasso Regression&amp;quot;, &amp;quot;Ridge Regression&amp;quot;,
+         &amp;quot;Decision Tree Regressor&amp;quot;, &amp;quot;Random Forest Regressor&amp;quot;]
+rmses = []
+
+for model in models:
+    rmses.append(np.sqrt(mean_squared_error(y_test, model.predict(X_test))))
+
+x = np.arange(len(names))
+width = 0.3
+
+fig, ax = plt.subplots(figsize=(10,7))
+rects = ax.bar(x, rmses, width)
+ax.set_ylabel(&#39;RMSE&#39;)
+ax.set_xlabel(&#39;Models&#39;)
+ax.set_title(&#39;RMSE with Different Algorithms&#39;)
+ax.set_xticks(x)
+ax.set_xticklabels(names, rotation=45)
+autolabel(rects)
+fig.tight_layout()
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/final.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/final.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;h3 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;We have analysed the Compressive Strength Data and used Machine Learning to predict the Compressive Strength of Concrete. We have used Linear Regression and its variations, Decision Trees and Random Forests to make predictions and compared their performance. Random Forest Regressor has the lowest RMSE and is a good choice for this problem. Also, we can further improve the performance of the algorithm by tuning the hyperparameters by performing a grid search or random search.&lt;/p&gt;
+&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;I-Cheng Yeh, &amp;ldquo;
+&lt;a href=&#34;https://www.sciencedirect.com/science/article/abs/pii/S0008884698001653&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Modeling of strength of high performance concrete using artificial neural networks&lt;/a&gt;,&amp;rdquo; Cement and Concrete Research, Vol. 28, No. 12, pp. 1797-1808 (1998).&lt;/li&gt;
+&lt;li&gt;Ahsanul Kabir, Md Monjurul Hasan, Khasro Miah, &amp;ldquo;
+&lt;a href=&#34;https://www.researchgate.net/publication/258255660_Strength_Prediction_Model_for_Concrete&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Strength Prediction Model for Concrete&lt;/a&gt;&amp;quot;, ACEE Int. J. on Civil and Environmental Engineering, Vol. 2, No. 1, Aug 2013.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://archive.ics.uci.edu/ml/datasets/Concrete+Compressive+Strength&#34;&gt;https://archive.ics.uci.edu/ml/datasets/Concrete+Compressive+Strength&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Effect of Initialization on Optimization Trajectory in 2D</title>
       <link>https://pranaymodukuru.github.io/post/optimization-trajectory/</link>
       <pubDate>Thu, 05 Mar 2020 01:53:52 +0100</pubDate>
       <guid>https://pranaymodukuru.github.io/post/optimization-trajectory/</guid>
       <description>&lt;h3 id=&#34;the-optimization-problem&#34;&gt;The Optimization Problem&lt;/h3&gt;
 &lt;p&gt;In simple words, finding a minimum value for a given equation is considered as optimization. This has many applications in real life - finding the fastest path when traveling from one place to other, job shop scheduling, air traffic management etc,. The optimization has been the back bone of machine learning, where the algorithms are expected to extract knowledge from huge volumes of data.&lt;/p&gt;
-&lt;p&gt;Optimization plays a major role Neural Networks, where there are millions of parameters and the goal is to find the right set of parameters to correctly represent the data. There has been a lot of research in this field and many algorithms have been developed for effective optimization. Even though the performance of the optimizer has improved a lot, there is another problem that the optimization depends upon i.e. the initial point. The trajectory of optimization is largely dependant on the initialisation. This has been studied and numerous initialization techniques have been proposed to effectively exploit the power of optimization algorithms.&lt;/p&gt;
+&lt;p&gt;Optimization plays a major role Neural Networks where there are millions of parameters and the goal is to find the right set of parameters to correctly represent the data. There has been a lot of research in this field and many algorithms have been developed for effective optimization. Even though the performance of the optimizer has improved a lot, there is another problem that the optimization depends upon i.e. the initial point. The trajectory of optimization is largely dependant on the initialisation. This has been studied and numerous initialization techniques have been proposed to effectively exploit the power of optimization algorithms.&lt;/p&gt;
 &lt;p&gt;In this post we are going to see how the initialization can affect the performance of some of the optimization algorithms until day. Although, we are using a two dimensional problem here since it is easy to visualize, the initialization problem becomes more prevalent when there are millions of parameters (Neural Networks).&lt;/p&gt;
 &lt;h3 id=&#34;the-task&#34;&gt;The Task&lt;/h3&gt;
 &lt;p&gt;Initialize x, y and use gradient descent algorithms to find the optimal values of x and y such that the value of the Beale function is zero (or as low as possible).&lt;/p&gt;
@@ -177,7 +807,7 @@ fig.tight_layout(rect=[0, 0.03, 1, 0.95])
 
     return trajectory
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h6 id=&#34;comparision-between-trajectories&#34;&gt;Comparision between trajectories&lt;/h6&gt;
+&lt;h6 id=&#34;comparison-between-trajectories&#34;&gt;Comparison between trajectories&lt;/h6&gt;
 &lt;p&gt;After collecting the paths of parameters with different algorithms, we are going to plot them on the Beale Function Contour plot. The below function takes in the initial position, list of optimizers and corresponding learning rates and epochs and plots the trajectories of algorithms with specified settings.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def compare_trajectories(x, y, epochs, optims, lrs):
 

@@ -236,7 +236,7 @@
   
   <meta property="og:site_name" content="Pranay Modukuru">
   <meta property="og:url" content="https://pranaymodukuru.github.io/post/optimization-trajectory/">
-  <meta property="og:title" content="Effect of Initialization on Optimization Trajectory | Pranay Modukuru">
+  <meta property="og:title" content="Effect of Initialization on Optimization Trajectory in 2D | Pranay Modukuru">
   <meta property="og:description" content="The purpose of this post is to demonstrate the importance of Initialization"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
@@ -269,7 +269,7 @@
     "@type": "WebPage",
     "@id": "https://pranaymodukuru.github.io/post/optimization-trajectory/"
   },
-  "headline": "Effect of Initialization on Optimization Trajectory",
+  "headline": "Effect of Initialization on Optimization Trajectory in 2D",
   
   "datePublished": "2020-03-05T01:53:52+01:00",
   "dateModified": "2020-03-05T01:53:52+01:00",
@@ -305,7 +305,7 @@
 
 
 
-  <title>Effect of Initialization on Optimization Trajectory | Pranay Modukuru</title>
+  <title>Effect of Initialization on Optimization Trajectory in 2D | Pranay Modukuru</title>
 
 </head>
 
@@ -567,7 +567,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>Effect of Initialization on Optimization Trajectory</h1>
+  <h1>Effect of Initialization on Optimization Trajectory in 2D</h1>
 
   
   <p class="page-subtitle">Visualizing how Initialization effects optimization</p>
@@ -651,7 +651,7 @@
     <div class="article-style">
       <h3 id="the-optimization-problem">The Optimization Problem</h3>
 <p>In simple words, finding a minimum value for a given equation is considered as optimization. This has many applications in real life - finding the fastest path when traveling from one place to other, job shop scheduling, air traffic management etc,. The optimization has been the back bone of machine learning, where the algorithms are expected to extract knowledge from huge volumes of data.</p>
-<p>Optimization plays a major role Neural Networks, where there are millions of parameters and the goal is to find the right set of parameters to correctly represent the data. There has been a lot of research in this field and many algorithms have been developed for effective optimization. Even though the performance of the optimizer has improved a lot, there is another problem that the optimization depends upon i.e. the initial point. The trajectory of optimization is largely dependant on the initialisation. This has been studied and numerous initialization techniques have been proposed to effectively exploit the power of optimization algorithms.</p>
+<p>Optimization plays a major role Neural Networks where there are millions of parameters and the goal is to find the right set of parameters to correctly represent the data. There has been a lot of research in this field and many algorithms have been developed for effective optimization. Even though the performance of the optimizer has improved a lot, there is another problem that the optimization depends upon i.e. the initial point. The trajectory of optimization is largely dependant on the initialisation. This has been studied and numerous initialization techniques have been proposed to effectively exploit the power of optimization algorithms.</p>
 <p>In this post we are going to see how the initialization can affect the performance of some of the optimization algorithms until day. Although, we are using a two dimensional problem here since it is easy to visualize, the initialization problem becomes more prevalent when there are millions of parameters (Neural Networks).</p>
 <h3 id="the-task">The Task</h3>
 <p>Initialize x, y and use gradient descent algorithms to find the optimal values of x and y such that the value of the Beale function is zero (or as low as possible).</p>
@@ -809,7 +809,7 @@ fig.tight_layout(rect=[0, 0.03, 1, 0.95])
 
     return trajectory
 </code></pre>
-<h6 id="comparision-between-trajectories">Comparision between trajectories</h6>
+<h6 id="comparison-between-trajectories">Comparison between trajectories</h6>
 <p>After collecting the paths of parameters with different algorithms, we are going to plot them on the Beale Function Contour plot. The below function takes in the initial position, list of optimizers and corresponding learning rates and epochs and plots the trajectories of algorithms with specified settings.</p>
 <pre><code class="language-python">def compare_trajectories(x, y, epochs, optims, lrs):
 
@@ -1015,7 +1015,7 @@ compare_trajectories(x, y, epochs, optims, lrs)
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://pranaymodukuru.github.io/post/optimization-trajectory/&amp;text=Effect%20of%20Initialization%20on%20Optimization%20Trajectory" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://pranaymodukuru.github.io/post/optimization-trajectory/&amp;text=Effect%20of%20Initialization%20on%20Optimization%20Trajectory%20in%202D" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -1028,7 +1028,7 @@ compare_trajectories(x, y, epochs, optims, lrs)
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://pranaymodukuru.github.io/post/optimization-trajectory/&amp;t=Effect%20of%20Initialization%20on%20Optimization%20Trajectory" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://pranaymodukuru.github.io/post/optimization-trajectory/&amp;t=Effect%20of%20Initialization%20on%20Optimization%20Trajectory%20in%202D" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -1041,7 +1041,7 @@ compare_trajectories(x, y, epochs, optims, lrs)
       
       
       <li>
-        <a href="mailto:?subject=Effect%20of%20Initialization%20on%20Optimization%20Trajectory&amp;body=https://pranaymodukuru.github.io/post/optimization-trajectory/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Effect%20of%20Initialization%20on%20Optimization%20Trajectory%20in%202D&amp;body=https://pranaymodukuru.github.io/post/optimization-trajectory/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -1054,7 +1054,7 @@ compare_trajectories(x, y, epochs, optims, lrs)
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://pranaymodukuru.github.io/post/optimization-trajectory/&amp;title=Effect%20of%20Initialization%20on%20Optimization%20Trajectory" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://pranaymodukuru.github.io/post/optimization-trajectory/&amp;title=Effect%20of%20Initialization%20on%20Optimization%20Trajectory%20in%202D" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -1067,7 +1067,7 @@ compare_trajectories(x, y, epochs, optims, lrs)
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Effect%20of%20Initialization%20on%20Optimization%20Trajectory%20https://pranaymodukuru.github.io/post/optimization-trajectory/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Effect%20of%20Initialization%20on%20Optimization%20Trajectory%20in%202D%20https://pranaymodukuru.github.io/post/optimization-trajectory/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -1080,7 +1080,7 @@ compare_trajectories(x, y, epochs, optims, lrs)
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://pranaymodukuru.github.io/post/optimization-trajectory/&amp;title=Effect%20of%20Initialization%20on%20Optimization%20Trajectory" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://pranaymodukuru.github.io/post/optimization-trajectory/&amp;title=Effect%20of%20Initialization%20on%20Optimization%20Trajectory%20in%202D" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>

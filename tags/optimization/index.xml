@@ -13,13 +13,13 @@
     </image>
     
     <item>
-      <title>Effect of Initialization on Optimization Trajectory</title>
+      <title>Effect of Initialization on Optimization Trajectory in 2D</title>
       <link>https://pranaymodukuru.github.io/post/optimization-trajectory/</link>
       <pubDate>Thu, 05 Mar 2020 01:53:52 +0100</pubDate>
       <guid>https://pranaymodukuru.github.io/post/optimization-trajectory/</guid>
       <description>&lt;h3 id=&#34;the-optimization-problem&#34;&gt;The Optimization Problem&lt;/h3&gt;
 &lt;p&gt;In simple words, finding a minimum value for a given equation is considered as optimization. This has many applications in real life - finding the fastest path when traveling from one place to other, job shop scheduling, air traffic management etc,. The optimization has been the back bone of machine learning, where the algorithms are expected to extract knowledge from huge volumes of data.&lt;/p&gt;
-&lt;p&gt;Optimization plays a major role Neural Networks, where there are millions of parameters and the goal is to find the right set of parameters to correctly represent the data. There has been a lot of research in this field and many algorithms have been developed for effective optimization. Even though the performance of the optimizer has improved a lot, there is another problem that the optimization depends upon i.e. the initial point. The trajectory of optimization is largely dependant on the initialisation. This has been studied and numerous initialization techniques have been proposed to effectively exploit the power of optimization algorithms.&lt;/p&gt;
+&lt;p&gt;Optimization plays a major role Neural Networks where there are millions of parameters and the goal is to find the right set of parameters to correctly represent the data. There has been a lot of research in this field and many algorithms have been developed for effective optimization. Even though the performance of the optimizer has improved a lot, there is another problem that the optimization depends upon i.e. the initial point. The trajectory of optimization is largely dependant on the initialisation. This has been studied and numerous initialization techniques have been proposed to effectively exploit the power of optimization algorithms.&lt;/p&gt;
 &lt;p&gt;In this post we are going to see how the initialization can affect the performance of some of the optimization algorithms until day. Although, we are using a two dimensional problem here since it is easy to visualize, the initialization problem becomes more prevalent when there are millions of parameters (Neural Networks).&lt;/p&gt;
 &lt;h3 id=&#34;the-task&#34;&gt;The Task&lt;/h3&gt;
 &lt;p&gt;Initialize x, y and use gradient descent algorithms to find the optimal values of x and y such that the value of the Beale function is zero (or as low as possible).&lt;/p&gt;
@@ -177,7 +177,7 @@ fig.tight_layout(rect=[0, 0.03, 1, 0.95])
 
     return trajectory
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h6 id=&#34;comparision-between-trajectories&#34;&gt;Comparision between trajectories&lt;/h6&gt;
+&lt;h6 id=&#34;comparison-between-trajectories&#34;&gt;Comparison between trajectories&lt;/h6&gt;
 &lt;p&gt;After collecting the paths of parameters with different algorithms, we are going to plot them on the Beale Function Contour plot. The below function takes in the initial position, list of optimizers and corresponding learning rates and epochs and plots the trajectories of algorithms with specified settings.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def compare_trajectories(x, y, epochs, optims, lrs):
 
