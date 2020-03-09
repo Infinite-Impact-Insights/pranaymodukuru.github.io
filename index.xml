@@ -5,12 +5,26 @@
     <link>https://pranaymodukuru.github.io/</link>
       <atom:link href="https://pranaymodukuru.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Pranay Modukuru</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Pranay Modukuru 2020</copyright><lastBuildDate>Thu, 05 Mar 2020 01:53:52 +0100</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Pranay Modukuru 2020</copyright><lastBuildDate>Mon, 09 Mar 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Pranay Modukuru</title>
       <link>https://pranaymodukuru.github.io/</link>
     </image>
+    
+    <item>
+      <title>Concrete Compressive Strength Prediction</title>
+      <link>https://pranaymodukuru.github.io/project/concrete-compressive-strength/</link>
+      <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://pranaymodukuru.github.io/project/concrete-compressive-strength/</guid>
+      <description>&lt;p&gt;Photo by Ricardo 
+&lt;a href=&#34;https://unsplash.com/@ripato&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gomez Angel&lt;/a&gt; on 
+&lt;a href=&#34;https://unsplash.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Unsplash&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Concrete is one of the most important materials in Civil Engineering. Knowing the compressive strength of concrete is very important when constructing a building or a bridge. The Compressive Strength of Concrete is a highly nonlinear function of ingredients used in making it and their characteristics. Thus, using Machine Learning to predict the Strength could be useful in generating a combination of ingredients which result in high Strength.&lt;/p&gt;
+&lt;p&gt;Check out the project on 
+&lt;a href=&#34;https://github.com/pranaymodukuru/Concrete-compressive-strength/blob/master/ConcreteCompressiveStrengthPrediction.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Concrete Compressive Strength Prediction using Machine Learning</title>
