@@ -31,7 +31,10 @@
       <link>https://pranaymodukuru.github.io/post/concrete-compressive-strength/</link>
       <pubDate>Thu, 05 Mar 2020 01:53:52 +0100</pubDate>
       <guid>https://pranaymodukuru.github.io/post/concrete-compressive-strength/</guid>
-      <description>&lt;h2 id=&#34;concrete-compressive-strength&#34;&gt;Concrete Compressive Strength&lt;/h2&gt;
+      <description>&lt;p&gt;Photo by Ricardo 
+&lt;a href=&#34;https://unsplash.com/@ripato&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gomez Angel&lt;/a&gt; on 
+&lt;a href=&#34;https://unsplash.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Unsplash&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;concrete-compressive-strength&#34;&gt;Concrete Compressive Strength&lt;/h2&gt;
 &lt;p&gt;The Compressive Strength of Concrete determines the quality of Concrete. This is generally determined by a standard crushing test on a concrete cylinder. This requires engineers to build small concrete cylinders with different combinations of raw materials and test these cylinders for strength variations with a change in each raw material. The recommended wait time for testing the cylinder is 28 days to ensure correct results. This consumes a lot of time and requires lot of labour to prepare different prototypes and test them. Also, this method is prone to human error and one small mistake can cause the wait time to drastically increase.&lt;/p&gt;
 &lt;p&gt;One way of reducing the wait time and reducing the amount of combinations to try is to make use of digital simulations, where we can provide information to the computer about what we know and the computer tries different combinations to predict the compressive strength. This way we can reduce the amount of combinations we can try physically and reduce the amount of time for experimentation. But, to design such software we have to know the relations between all the raw materials and how one material affects the strength. It is possible to derive mathematical equations and run simulations based on these equations, but we cannot expect the relations to be same in real-world. Also, these tests have been performed for many number of time now and we have enough real-world data that can be used for predictive modelling.&lt;/p&gt;
 &lt;p&gt;In this article, we are going to analyse 
