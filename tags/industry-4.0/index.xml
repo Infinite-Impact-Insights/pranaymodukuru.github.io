@@ -20,9 +20,158 @@
       <description>&lt;p&gt;Photo by Ricardo 
 &lt;a href=&#34;https://unsplash.com/@ripato&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gomez Angel&lt;/a&gt; on 
 &lt;a href=&#34;https://unsplash.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Unsplash&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;concrete-compressive-strength-prediction-using-machine-learning&#34;&gt;Concrete Compressive Strength Prediction using Machine Learning&lt;/h2&gt;
 &lt;p&gt;Concrete is one of the most important materials in Civil Engineering. Knowing the compressive strength of concrete is very important when constructing a building or a bridge. The Compressive Strength of Concrete is a highly nonlinear function of ingredients used in making it and their characteristics. Thus, using Machine Learning to predict the Strength could be useful in generating a combination of ingredients which result in high Strength.&lt;/p&gt;
-&lt;p&gt;Check out the project on 
-&lt;a href=&#34;https://github.com/pranaymodukuru/Concrete-compressive-strength/blob/master/ConcreteCompressiveStrengthPrediction.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Please read this 
+&lt;a href=&#34;https://towardsdatascience.com/concrete-compressive-strength-prediction-using-machine-learning-4a531b3c43f3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;blog&lt;/a&gt; for more explanation. Also leave some claps to show appreciation!&lt;/p&gt;
+&lt;p&gt;Please refer 
+&lt;a href=&#34;https://github.com/pranaymodukuru/Concrete-compressive-strength/blob/master/ConcreteCompressiveStrengthPrediction.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;ConcreteCompressiveStrengthPrediction.ipynb&lt;/em&gt;&lt;/a&gt; for code.&lt;/p&gt;
+&lt;h2 id=&#34;1-problem-statement&#34;&gt;1. Problem Statement&lt;/h2&gt;
+&lt;p&gt;Predicting Compressive Strength of Concrete given its age and quantitative measurements of ingredients.&lt;/p&gt;
+&lt;h2 id=&#34;2-data-description&#34;&gt;2. Data Description&lt;/h2&gt;
+&lt;p&gt;Data is obtained from UCI Machine Learning Repository.
+&lt;a href=&#34;https://archive.ics.uci.edu/ml/datasets/Concrete+Compressive+Strength&#34;&gt;https://archive.ics.uci.edu/ml/datasets/Concrete+Compressive+Strength&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Number of instances - 1030&lt;/li&gt;
+&lt;li&gt;Number of Attributes - 9
+&lt;ul&gt;
+&lt;li&gt;Attribute breakdown - 8 quantitative inputs, 1 quantitative output&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;attribute-information&#34;&gt;Attribute information&lt;/h4&gt;
+&lt;h5 id=&#34;inputs&#34;&gt;Inputs&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;Cement&lt;/li&gt;
+&lt;li&gt;Blast Furnace Slag&lt;/li&gt;
+&lt;li&gt;Fly Ash&lt;/li&gt;
+&lt;li&gt;Water&lt;/li&gt;
+&lt;li&gt;Superplasticizer&lt;/li&gt;
+&lt;li&gt;Coarse Aggregate&lt;/li&gt;
+&lt;li&gt;Fine Aggregate&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All above features measured in kg/$m^3$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Age (in days)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;output&#34;&gt;Output&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;Concrete Compressive Strength (Mpa)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3-modelling-and-evaluation&#34;&gt;3. Modelling and Evaluation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Algorithms used&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Linear regression&lt;/li&gt;
+&lt;li&gt;Lasso regression&lt;/li&gt;
+&lt;li&gt;Ridge regression&lt;/li&gt;
+&lt;li&gt;Decision Trees&lt;/li&gt;
+&lt;li&gt;Random Forests&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Metric - Since the target variable is a continuous variable, regression evaluation metric RMSE (Root Mean Squared Error) and R2 Score (Coefficient of Determination) have been used.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;4-results&#34;&gt;4. Results&lt;/h2&gt;
+&lt;h4 id=&#34;feature-correlation&#34;&gt;Feature correlation&lt;/h4&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/pearson_coeff.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/pearson_coeff.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;h4 id=&#34;feature-importance&#34;&gt;Feature importance&lt;/h4&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/tree_feat_imps.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/tree_feat_imps.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;h4 id=&#34;final-comparison&#34;&gt;Final Comparison&lt;/h4&gt;
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/final.png&#34; &gt;
+
+
+  &lt;img src=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/final.png&#34; alt=&#34;&#34;  &gt;
+&lt;/a&gt;
+
+
+
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;5-references&#34;&gt;5. References&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://archive.ics.uci.edu/ml/datasets/Concrete+Compressive+Strength&#34;&gt;https://archive.ics.uci.edu/ml/datasets/Concrete+Compressive+Strength&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
 </description>
     </item>
     
