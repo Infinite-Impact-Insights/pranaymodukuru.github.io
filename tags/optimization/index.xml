@@ -7,7 +7,7 @@
     <description>Optimization</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Pranay Modukuru 2020</copyright><lastBuildDate>Thu, 05 Mar 2020 01:53:52 +0100</lastBuildDate>
     <image>
-      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <url>https://pranaymodukuru.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Optimization</title>
       <link>https://pranaymodukuru.github.io/tags/optimization/</link>
     </image>
@@ -109,7 +109,7 @@ fig.tight_layout(rect=[0, 0.03, 1, 0.95])
 
 
 
-&lt;figure&gt;
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/optimization-trajectory-visualization/beale_func.png&#34; &gt;
@@ -250,7 +250,7 @@ compare_trajectories(x, y, epochs, optims, lrs)
 
 
 
-&lt;figure&gt;
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/optimization-trajectory-visualization/close_to_minima.png&#34; &gt;
@@ -287,7 +287,7 @@ compare_trajectories(x, y, epochs, optims, lrs)
 
 
 
-&lt;figure&gt;
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/optimization-trajectory-visualization/a_little_further.png&#34; &gt;
@@ -324,7 +324,7 @@ compare_trajectories(x, y, epochs, optims, lrs)
 
 
 
-&lt;figure&gt;
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/optimization-trajectory-visualization/lower_left.png&#34; &gt;

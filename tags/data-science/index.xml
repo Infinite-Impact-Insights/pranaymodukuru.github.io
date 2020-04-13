@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Science | Pranay Modukuru</title>
+    <link>https://pranaymodukuru.github.io/tags/data-science/</link>
+      <atom:link href="https://pranaymodukuru.github.io/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
+    <description>Data Science</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Pranay Modukuru 2020</copyright><lastBuildDate>Mon, 13 Apr 2020 12:50:14 +0200</lastBuildDate>
+    <image>
+      <url>https://pranaymodukuru.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Data Science</title>
+      <link>https://pranaymodukuru.github.io/tags/data-science/</link>
+    </image>
+    
+    <item>
+      <title>Customer Segmentation and Acquisition</title>
+      <link>https://pranaymodukuru.github.io/project/customer-segmentation-acquisition/</link>
+      <pubDate>Mon, 13 Apr 2020 12:50:14 +0200</pubDate>
+      <guid>https://pranaymodukuru.github.io/project/customer-segmentation-acquisition/</guid>
+      <description>&lt;p&gt;Image 
+&lt;a href=&#34;https://www.liveagent.com/academy/customer-segmentation/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;project-overview&#34;&gt;Project Overview&lt;/h3&gt;
+&lt;p&gt;In this project, the demographic data of German population and the customer data have been analysed in order to perform Customer Segmentation and Customer Acquisition. Arvato Financial Solutions is a services company that provides financial services, Information Technology (IT) services and Supply Chain Management (SCM) solutions for business customers on a global scale.&lt;/p&gt;
+&lt;p&gt;This project is to help a Mail-Order company to acquire new customers to sell its organic products. The goal of this project is to understand the customer demographics as compared to general population in order to decide whether to approach a person for future products.&lt;/p&gt;
+&lt;h4 id=&#34;please-click-on-links-below-for-more-details&#34;&gt;Please click on links below for more details&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/pranaymodukuru/Bertelsmann-Arvato-customer-segmentation&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/pranaymodukuru/Bertelsmann-Arvato-customer-segmentation/blob/master/Arvato%20Project%20Workbook.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- * Medium [Blog](https://towardsdatascience.com/concrete-compressive-strength-prediction-using-machine-learning-4a531b3c43f3) - Also leave some claps to show appreciation! --&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

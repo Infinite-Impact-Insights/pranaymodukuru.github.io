@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!DOCTYPE html><html lang="en-us" >
 
 <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.7.0">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
 
   
 
@@ -66,8 +65,8 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
@@ -213,6 +212,9 @@
 
 
   
+  
+
+  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
@@ -220,6 +222,8 @@
 
   <link rel="canonical" href="https://pranaymodukuru.github.io/project/concrete-compressive-strength/">
 
+  
+  
   
   
   
@@ -534,8 +538,21 @@
       
 
       
-      <li class="nav-item">
-        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
       </li>
       
 
@@ -651,7 +668,7 @@
   
     
   
-<a class="btn btn-outline-primary my-1 mr-1" href="https://github.com/pranaymodukuru/Concrete-compressive-strength/blob/master/ConcreteCompressiveStrengthPrediction.ipynb" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary my-1 mr-1" href="https://github.com/pranaymodukuru/Concrete-compressive-strength" target="_blank" rel="noopener">
   Code
 </a>
 
@@ -723,156 +740,15 @@
 <a href="https://unsplash.com/" target="_blank" rel="noopener">Unsplash</a></p>
 <h2 id="concrete-compressive-strength-prediction-using-machine-learning">Concrete Compressive Strength Prediction using Machine Learning</h2>
 <p>Concrete is one of the most important materials in Civil Engineering. Knowing the compressive strength of concrete is very important when constructing a building or a bridge. The Compressive Strength of Concrete is a highly nonlinear function of ingredients used in making it and their characteristics. Thus, using Machine Learning to predict the Strength could be useful in generating a combination of ingredients which result in high Strength.</p>
-<p>Please read this 
-<a href="https://towardsdatascience.com/concrete-compressive-strength-prediction-using-machine-learning-4a531b3c43f3" target="_blank" rel="noopener">blog</a> for more explanation. Also leave some claps to show appreciation!</p>
-<p>Please refer 
-<a href="https://github.com/pranaymodukuru/Concrete-compressive-strength/blob/master/ConcreteCompressiveStrengthPrediction.ipynb" target="_blank" rel="noopener"><em>ConcreteCompressiveStrengthPrediction.ipynb</em></a> for code.</p>
-<h2 id="1-problem-statement">1. Problem Statement</h2>
-<p>Predicting Compressive Strength of Concrete given its age and quantitative measurements of ingredients.</p>
-<h2 id="2-data-description">2. Data Description</h2>
-<p>Data is obtained from UCI Machine Learning Repository.
-<a href="https://archive.ics.uci.edu/ml/datasets/Concrete+Compressive+Strength">https://archive.ics.uci.edu/ml/datasets/Concrete+Compressive+Strength</a></p>
-<ul>
-<li>Number of instances - 1030</li>
-<li>Number of Attributes - 9
-<ul>
-<li>Attribute breakdown - 8 quantitative inputs, 1 quantitative output</li>
-</ul>
-</li>
-</ul>
-<h4 id="attribute-information">Attribute information</h4>
-<h5 id="inputs">Inputs</h5>
-<ul>
-<li>Cement</li>
-<li>Blast Furnace Slag</li>
-<li>Fly Ash</li>
-<li>Water</li>
-<li>Superplasticizer</li>
-<li>Coarse Aggregate</li>
-<li>Fine Aggregate</li>
-</ul>
-<p>All above features measured in kg/$m^3$</p>
-<ul>
-<li>Age (in days)</li>
-</ul>
-<h5 id="output">Output</h5>
-<ul>
-<li>Concrete Compressive Strength (Mpa)</li>
-</ul>
-<h2 id="3-modelling-and-evaluation">3. Modelling and Evaluation</h2>
+<h4 id="please-click-on-links-below-for-more-details">Please click on links below for more details</h4>
 <ul>
 <li>
-<p>Algorithms used</p>
-<ul>
-<li>Linear regression</li>
-<li>Lasso regression</li>
-<li>Ridge regression</li>
-<li>Decision Trees</li>
-<li>Random Forests</li>
-</ul>
-</li>
+<a href="https://github.com/pranaymodukuru/Concrete-compressive-strength" target="_blank" rel="noopener">Project</a></li>
 <li>
-<p>Metric - Since the target variable is a continuous variable, regression evaluation metric RMSE (Root Mean Squared Error) and R2 Score (Coefficient of Determination) have been used.</p>
-</li>
+<a href="https://github.com/pranaymodukuru/Concrete-compressive-strength/blob/master/ConcreteCompressiveStrengthPrediction.ipynb" target="_blank" rel="noopener">Code</a></li>
+<li>Medium 
+<a href="https://towardsdatascience.com/concrete-compressive-strength-prediction-using-machine-learning-4a531b3c43f3" target="_blank" rel="noopener">Blog</a> - Also leave some claps to show appreciation!</li>
 </ul>
-<h2 id="4-results">4. Results</h2>
-<h4 id="feature-correlation">Feature correlation</h4>
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-<figure>
-
-
-  <a data-fancybox="" href="/img/concrete-compressive-strength-imgs/pearson_coeff.png" >
-
-
-  <img src="/img/concrete-compressive-strength-imgs/pearson_coeff.png" alt=""  >
-</a>
-
-
-
-</figure>
-
-<h4 id="feature-importance">Feature importance</h4>
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-<figure>
-
-
-  <a data-fancybox="" href="/img/concrete-compressive-strength-imgs/tree_feat_imps.png" >
-
-
-  <img src="/img/concrete-compressive-strength-imgs/tree_feat_imps.png" alt=""  >
-</a>
-
-
-
-</figure>
-
-<h4 id="final-comparison">Final Comparison</h4>
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-<figure>
-
-
-  <a data-fancybox="" href="/img/concrete-compressive-strength-imgs/final.png" >
-
-
-  <img src="/img/concrete-compressive-strength-imgs/final.png" alt=""  >
-</a>
-
-
-
-</figure>
-
-<h2 id="5-references">5. References</h2>
-<ol>
-<li><a href="https://archive.ics.uci.edu/ml/datasets/Concrete+Compressive+Strength">https://archive.ics.uci.edu/ml/datasets/Concrete+Compressive+Strength</a></li>
-</ol>
 
     </div>
 
@@ -990,7 +866,7 @@
 
 
   
-
+  
 
 
 
@@ -1006,7 +882,7 @@
   <div class="media author-card content-widget-hr">
     
       
-      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu64397e16f9b5d3159cea37f708b95c6d_2047012_270x270_fill_q90_lanczos_center.jpg" alt="Avatar">
+      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu64397e16f9b5d3159cea37f708b95c6d_2047012_270x270_fill_q90_lanczos_center.jpg" alt="Naga Sai Pranay Modukuru">
     
 
     <div class="media-body">
@@ -1104,6 +980,9 @@
 
 
 
+
+
+
 <section id="comments">
   
     
@@ -1178,96 +1057,19 @@
 
 
 
-
-
   
 
 
-<div class="media stream-item">
-  <div class="media-body">
+<div class="view-list-item">
+  <i class="far fa-newspaper pub-icon" aria-hidden="true"></i>
+  <a href="/post/concrete-compressive-strength/" >Concrete Compressive Strength Prediction using Machine Learning</a>
 
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/concrete-compressive-strength/" >Concrete Compressive Strength Prediction using Machine Learning</a>
-    </h3>
-
-    
-    <div class="article-style">
-      The purpose of this post is to demonstrate the use of Machine learning as a tool for Civil Engineering
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-  
-  
-  <div>
-    
-
-
-
-  
-  <span><a href="/authors/pranay-modukuru/">Pranay Modukuru</a></span>
-
-  </div>
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    Mar 5, 2020
-  </span>
   
 
   
 
   
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    10 min read
-  </span>
-  
 
-  
-  
-  
-  <span class="middot-divider"></span>
-  <a href="/post/concrete-compressive-strength/#disqus_thread"></a>
-  
-
-  
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-    
-    <a href="/post/concrete-compressive-strength/" >
-      <img src="/post/concrete-compressive-strength/featured_hu64521e78b5469527301185a2eb0e9532_1522802_150x0_resize_q90_lanczos.jpg" alt="">
-    </a>
-    
-  </div>
 </div>
 
           
@@ -1296,14 +1098,14 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
 
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.4/mermaid.min.js" integrity="sha256-JEqEejGt4tR35L0a1zodzsV0/PJ6GIf7J4yDtywdrH8=" crossorigin="anonymous" title="mermaid"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.8/mermaid.min.js" integrity="sha256-lyWCDMnMeZiXRi7Zl54sZGKYmgQs4izcT7+tKc+KUBk=" crossorigin="anonymous" title="mermaid"></script>
       
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
         
       
 
@@ -1371,6 +1173,9 @@
 
     
     
+
+    
+    
     <script id="dsq-count-scr" src="https://Pranay.disqus.com/count.js" async></script>
     
 
@@ -1388,7 +1193,7 @@
     
     
     
-    <script src="/js/academic.min.a8d7005002cb4a052fd6d721e83df9ba.js"></script>
+    <script src="/js/academic.min.37431be2d92d7fb0160054761ab79602.js"></script>
 
     
 

@@ -7,7 +7,7 @@
     <description>Deep Learning</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Pranay Modukuru 2020</copyright><lastBuildDate>Thu, 05 Mar 2020 01:53:52 +0100</lastBuildDate>
     <image>
-      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <url>https://pranaymodukuru.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Deep Learning</title>
       <link>https://pranaymodukuru.github.io/tags/deep-learning/</link>
     </image>
@@ -109,7 +109,7 @@ fig.tight_layout(rect=[0, 0.03, 1, 0.95])
 
 
 
-&lt;figure&gt;
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/optimization-trajectory-visualization/beale_func.png&#34; &gt;
@@ -250,7 +250,7 @@ compare_trajectories(x, y, epochs, optims, lrs)
 
 
 
-&lt;figure&gt;
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/optimization-trajectory-visualization/close_to_minima.png&#34; &gt;
@@ -287,7 +287,7 @@ compare_trajectories(x, y, epochs, optims, lrs)
 
 
 
-&lt;figure&gt;
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/optimization-trajectory-visualization/a_little_further.png&#34; &gt;
@@ -324,7 +324,7 @@ compare_trajectories(x, y, epochs, optims, lrs)
 
 
 
-&lt;figure&gt;
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/optimization-trajectory-visualization/lower_left.png&#34; &gt;
@@ -359,10 +359,14 @@ compare_trajectories(x, y, epochs, optims, lrs)
       <link>https://pranaymodukuru.github.io/project/denoising-auto-encoder/</link>
       <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
       <guid>https://pranaymodukuru.github.io/project/denoising-auto-encoder/</guid>
-      <description>&lt;p&gt;Deep Learning has transformed many domains such as Image Processing, Computer Vision, Natural Language Processing. Removing noise from images has been a reasonably tough task until the deep learning based auto encoders transformed the image processing field.&lt;/p&gt;
-&lt;p&gt;I used a Deep Convolutional Autoencoder to remove coffe stains, footprints, marks resulting from folding or wrinkles from scanned office documents.&lt;/p&gt;
-&lt;p&gt;Check out the project on 
-&lt;a href=&#34;https://github.com/pranaymodukuru/DenoisingAutoencoder/blob/master/DenoisingAutoEncoder_NoisyOfficeData.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;Removing noise from images has been a reasonably tough task until the deep learning based auto encoders transformed the image processing field. I used a Deep Convolutional Autoencoder to remove coffe stains, footprints, marks resulting from folding or wrinkles from scanned office documents.&lt;/p&gt;
+&lt;h4 id=&#34;please-click-on-links-below-for-more-details&#34;&gt;Please click on links below for more details&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/pranaymodukuru/DenoisingAutoencoder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/pranaymodukuru/DenoisingAutoencoder/blob/master/DenoisingAutoEncoder_NoisyOfficeData.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -381,8 +385,13 @@ For example:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;In this project, I collected hand gesture images from my laptop&amp;rsquo;s webcam and trained a Convolutional Neural Network (CNN) to recognize these gestures.&lt;/p&gt;
 &lt;p&gt;My future plan is to use the trained CNN in a game, to predict the hand gestures in real-time.&lt;/p&gt;
-&lt;p&gt;Check out the project on 
-&lt;a href=&#34;https://github.com/pranaymodukuru/Hand-gesture-detection/blob/master/HandGestureRecognitionCNN.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;please-click-on-links-below-for-more-details&#34;&gt;Please click on links below for more details&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/pranaymodukuru/Hand-gesture-detection&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/pranaymodukuru/Hand-gesture-detection/blob/master/HandGestureRecognitionCNN.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -392,110 +401,16 @@ For example:&lt;/p&gt;
       <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
       <guid>https://pranaymodukuru.github.io/project/pmsm-rotor-temperature/</guid>
       <description>&lt;h3 id=&#34;predicting-rotor-temperature-of-a-permanent-magnet-synchronous-motorpmsm-using-a-convolutional-neural-networkcnn&#34;&gt;Predicting Rotor Temperature of a Permanent Magnet Synchronous Motor(PMSM) using a Convolutional Neural Network(CNN)&lt;/h3&gt;
-&lt;h3 id=&#34;1-problem-statement&#34;&gt;1. Problem Statement&lt;/h3&gt;
 &lt;p&gt;The rotor temperature of any motor is difficult to measure as it is a rotating part. Placing any sensors to measure this difficult to measure temperature would result in increase in costs and also increase the weight of the motor. In the era of electric vehicles, electric drives have become common in automotives and a lot of research is ongoing to reduce the weight of the motors in order to increase the efficiency of electric cars.&lt;/p&gt;
 &lt;p&gt;Measurement of quantities like temperature, torque of the rotor is important in order to design control systems to effectively control the motor. Many statistical based approaches have been studied in estimating the values of temperatures and torque, but these approaches require domain knowledge and often are different for different motors and different operating conditions. There is no universal approach towards estimating these values.&lt;/p&gt;
 &lt;p&gt;With the advent of Deep Learning, methods have been proposed to use deep learning approaches to predict the sensor values. The goal of the project is to efficiently predict the rotor temperature of a permanent magnet synchronous motor (PMSM), as it is usually difficult to measure the rotor temperature. This kind of prediction helps to reduce the amount of equipment that is to be mounted on to the motor to measure the temperature.&lt;/p&gt;
-&lt;p&gt;Please refer 
-&lt;a href=&#34;https://github.com/pranaymodukuru/PMSM_Rotor_Temp_Prediction/blob/master/CNN_MotorTemperature_Regression.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;CNN_MotorTemperature_Regression.ipynb&lt;/em&gt;&lt;/a&gt; for code.&lt;/p&gt;
-&lt;h3 id=&#34;2-data-description&#34;&gt;2. Data Description&lt;/h3&gt;
-&lt;p&gt;This project uses the electric-motor-temperature dataset to predict the rotor temperature of a motor. The dataset and its description is available here: &lt;a href=&#34;https://www.kaggle.com/wkirgsn/electric-motor-temperature&#34;&gt;https://www.kaggle.com/wkirgsn/electric-motor-temperature&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;A brief description of data attributes:&lt;/p&gt;
+&lt;h4 id=&#34;please-click-on-links-below-for-more-details&#34;&gt;Please click on links below for more details&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Ambient&lt;/strong&gt; - Ambient temperature&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Coolant&lt;/strong&gt; - Coolant temperature&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;u_d&lt;/strong&gt; - Voltage d-component (Active component)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;u_q&lt;/strong&gt; - Voltage q-component (Reactive component)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Motor_speed&lt;/strong&gt; - Speed of the motor&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Torque&lt;/strong&gt; - Torque induced by current&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;i_d&lt;/strong&gt; - Current d-component (Active component)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;i_q&lt;/strong&gt; - Current q-component (Reactive component)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;pm&lt;/strong&gt; - Permanent Magnet Surface temperature&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Stator_yoke&lt;/strong&gt; - Stator yoke temperature&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Stator_tooth&lt;/strong&gt; - Stator tooth temperature&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Stator_winding&lt;/strong&gt; - Stator winding temperature&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Profile_id&lt;/strong&gt; - Measurement Session id&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/pranaymodukuru/PMSM_Rotor_Temp_Prediction&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/pranaymodukuru/PMSM_Rotor_Temp_Prediction/blob/master/CNN_MotorTemperature_Regression.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Code&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Target features are &lt;strong&gt;pm&lt;/strong&gt;, &lt;strong&gt;Torque&lt;/strong&gt;, and **Stator_*** temperatures.&lt;/p&gt;
-&lt;h3 id=&#34;3-data-preparation&#34;&gt;3. Data Preparation&lt;/h3&gt;
-&lt;p&gt;The data has been divided into sequences of certain length. For example, A series of values collected from all the sensors over a time period of 10 seconds is taken as a sequence and the target value for this sequence is the temperature value of the next instance.&lt;/p&gt;
-&lt;p&gt;This way we can give the raw sensor values to the model and predict the temperature values. Although there are four interesting targets here. Only one of them is used as a target variable in this project.&lt;/p&gt;
-&lt;h3 id=&#34;4-modelling-and-evaluation&#34;&gt;4. Modelling and Evaluation&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Algorithm used - 1-D Convolutional Neural Network&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The sequence of sensor values are given as an input to the CNN and the output of CNN is taken as temperature.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Evaluation Metric - RMSE&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Since the target variable is a continuous variable, regression evaluation metric RMSE (Root Mean Squared Error) and R2 Score (Coefficient of Determination) have been used.&lt;/p&gt;
-&lt;h3 id=&#34;5-results&#34;&gt;5. Results&lt;/h3&gt;
-&lt;h5 id=&#34;loss-vs-epoch&#34;&gt;Loss vs Epoch&lt;/h5&gt;
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure&gt;
-
-
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/pmsm-rotor-temperature/losses.png&#34; &gt;
-
-
-  &lt;img src=&#34;https://pranaymodukuru.github.io/img/pmsm-rotor-temperature/losses.png&#34; alt=&#34;&#34;  &gt;
-&lt;/a&gt;
-
-
-
-&lt;/figure&gt;
-
-&lt;h4 id=&#34;predictions&#34;&gt;Predictions&lt;/h4&gt;
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure&gt;
-
-
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/pmsm-rotor-temperature/predictions.png&#34; &gt;
-
-
-  &lt;img src=&#34;https://pranaymodukuru.github.io/img/pmsm-rotor-temperature/predictions.png&#34; alt=&#34;&#34;  &gt;
-&lt;/a&gt;
-
-
-
-&lt;/figure&gt;
-
-&lt;h3 id=&#34;6-references&#34;&gt;6. References&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.kaggle.com/wkirgsn/electric-motor-temperature&#34;&gt;https://www.kaggle.com/wkirgsn/electric-motor-temperature&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
 </description>
     </item>
     

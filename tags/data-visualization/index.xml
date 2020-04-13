@@ -7,7 +7,7 @@
     <description>Data Visualization</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Pranay Modukuru 2020</copyright><lastBuildDate>Thu, 05 Mar 2020 01:53:52 +0100</lastBuildDate>
     <image>
-      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <url>https://pranaymodukuru.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Data Visualization</title>
       <link>https://pranaymodukuru.github.io/tags/data-visualization/</link>
     </image>
@@ -53,7 +53,7 @@ sns.heatmap(corr, annot=True, cmap=&#39;Blues&#39;)
 
 
 
-&lt;figure&gt;
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/pearson_coeff.png&#34; &gt;
@@ -92,7 +92,7 @@ sns.heatmap(corr, annot=True, cmap=&#39;Blues&#39;)
 
 
 
-&lt;figure&gt;
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/pairplot.png&#34; &gt;
@@ -128,7 +128,7 @@ sns.heatmap(corr, annot=True, cmap=&#39;Blues&#39;)
 
 
 
-&lt;figure&gt;
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/scatter_1.png&#34; &gt;
@@ -170,7 +170,7 @@ sns.heatmap(corr, annot=True, cmap=&#39;Blues&#39;)
 
 
 
-&lt;figure&gt;
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/scatter_2.png&#34; &gt;
@@ -315,7 +315,7 @@ plt.show()
 
 
 
-&lt;figure&gt;
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/lr_coeffs.png&#34; &gt;
@@ -370,7 +370,7 @@ fig.tight_layout(rect=[0, 0.03, 1, 0.95])
 
 
 
-&lt;figure&gt;
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/lr_true_pred.png&#34; &gt;
@@ -438,7 +438,7 @@ plt.show()
 
 
 
-&lt;figure&gt;
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/dtr_true_pred.png&#34; &gt;
@@ -506,7 +506,7 @@ plt.show()
 
 
 
-&lt;figure&gt;
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/rfr_true_pred.png&#34; &gt;
@@ -563,7 +563,7 @@ plt.show()
 
 
 
-&lt;figure&gt;
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/tree_feat_imps.png&#34; &gt;
@@ -619,7 +619,7 @@ plt.show()
 
 
 
-&lt;figure&gt;
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;https://pranaymodukuru.github.io/img/concrete-compressive-strength-imgs/final.png&#34; &gt;
