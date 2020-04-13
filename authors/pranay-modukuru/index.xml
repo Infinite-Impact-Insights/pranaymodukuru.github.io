@@ -17,7 +17,9 @@
       <link>https://pranaymodukuru.github.io/post/customer-segmentation/</link>
       <pubDate>Mon, 13 Apr 2020 16:45:57 +0200</pubDate>
       <guid>https://pranaymodukuru.github.io/post/customer-segmentation/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+      <description>&lt;p&gt;Image 
+&lt;a href=&#34;https://www.liveagent.com/academy/customer-segmentation/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;This blog post is about the final project that I did in Udacity&amp;rsquo;s Machine Learning Engineer Nanodegree program. This project is based on real-world data provided by Arvato Financial Solutions. The task is to understand the customer segments of a mail order company which sells organic products, and compare these segments with the general population data to predict future probable customers.&lt;/p&gt;
 &lt;p&gt;This project is as close as it can get to real-world data science project. It was challenging and fun to do and I learnt a lot by working on this and decided to write a blog post about my learnings.&lt;/p&gt;
 &lt;p&gt;Structure of this article:&lt;/p&gt;
